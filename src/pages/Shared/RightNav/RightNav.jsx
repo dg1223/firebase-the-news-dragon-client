@@ -14,7 +14,7 @@ import bg1 from "../../../assets/bg1.png";
 
 const RightNav = () => {
   return (
-    <div>
+    <div className="mt-4">
       <h4>Login with</h4>
       <Button variant="outline-primary">
         <FaGoogle /> Login with Google
@@ -25,7 +25,7 @@ const RightNav = () => {
         Login with GitHub
       </Button>
       <div>
-        <h4>Find us on</h4>
+        <h4 className="mt-4">Find us on</h4>
         <ListGroup>
           <ListGroup.Item>
             <FaFacebook />
