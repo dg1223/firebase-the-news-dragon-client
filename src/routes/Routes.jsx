@@ -10,32 +10,27 @@ import Register from "../pages/Login/Register/Register";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <LoginLayoout></LoginLayoout>,
     children: [
       {
-        path: '/',
-        element: <Navigate to="/category/0"></Navigate>
+        path: "/",
+        element: <Navigate to="/category/0"></Navigate>,
       },
       {
-        path: '/login'
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register'
-        element: <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
-    ]
-  }
+    ],
+  },
   {
     path: "/category",
     element: <Main></Main>,
     children: [
-      {
-        path: "/",
-        element: <Category></Category>,
-        loader: () => fetch("http://localhost:5000/news"),
-      },
       {
         path: ":id",
         element: <Category></Category>,

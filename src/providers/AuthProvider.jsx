@@ -9,7 +9,7 @@ const auth = getAuth(app);
 
 // add component to main.jsx to wrap the main app
 const AuthProvider = ({ children }) => {
-  const user = { displayName: "Muri Khan" };
+  const user = null;
   const authInfo = {
     user,
   };
