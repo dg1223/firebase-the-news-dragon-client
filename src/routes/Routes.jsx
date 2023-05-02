@@ -3,7 +3,7 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Cateogry/Category";
 import NewsLayout from "../layouts/NewsLayout";
-import News from "../pages/News/News";
+import News from "../pages/News/News/News";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +29,8 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <News></News>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/news/${params.id}`),
       },
     ],
   },
