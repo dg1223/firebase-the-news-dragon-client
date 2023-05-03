@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { Navigate, useLocation } from "react-router-dom";
 
-const PrivateRoute = () => {
-  return <div></div>;
+const PrivateRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
+
+  // if there's user, go to whichever children
+  // the user was last seen at
+  if (user) {
+    return children;
+  }
+
+  return <Navigate state={{ from: location }} to="/login"></Navigate>;
 };
 
 export default PrivateRoute;
@@ -11,6 +23,7 @@ export default PrivateRoute;
  *      STEPS
  * -------------------
  * 1. Check user is logged in or not
- * 2. If user is logged in, then allow them to visit the route
+ * 2. If user is logged in, then allow them to visit the route (pass children as props)
  * 3. Else redirect the user to the login page
+ * 4. Set up the private router
  */
