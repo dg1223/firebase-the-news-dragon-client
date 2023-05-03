@@ -6,7 +6,7 @@ import EditorsInsights from "../EditorsInsights/EditorsInsights";
 
 const News = () => {
   const news = useLoaderData();
-  console.log(news);
+  // console.log(news);
   const { _id, title, details, image_url, category_id } = news;
   return (
     <div>
