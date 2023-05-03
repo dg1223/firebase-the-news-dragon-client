@@ -16,7 +16,7 @@ const auth = getAuth(app);
 // add component to main.jsx to wrap the main app
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
-  const user = null;
+  // const user = null;
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
